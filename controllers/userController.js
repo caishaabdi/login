@@ -2,7 +2,7 @@ import Users from "../models/usermodel.js";
 
 export const getusers = async(req, res) => {
     const user = await Users.find()
-    res.json(Users)
+    res.json(user)
 }
 
 export const register = async(req, res) => {
