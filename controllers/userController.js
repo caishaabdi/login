@@ -16,6 +16,14 @@ export const register = async(req, res) => {
     const newdata = await user.save()
     res.status(201).json(newdata);
 }
+export const login = async(req, res) => {
+    const { email, password } = req.body
+    const user = await Users.findOne({ email })
+    if (user) {
+        res.status(201).json(user);
+    }
+
+}
 
 export const updateUser = async(req, res) => {
     const { id } = req.params
